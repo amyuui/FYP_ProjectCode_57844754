@@ -8,8 +8,6 @@ from src.core.backtester import Backtester
 from src.data.news_loader import load_kaggle_historical_news
 from src.processing.signal_processor import aggregate_daily_news, normalize_trading_signals
 
-import os
-
 def run_system_backtest(
     ticker="AAPL",
     historical_csv_path=None,
@@ -76,7 +74,7 @@ def run_system_backtest(
 
     normalized_events = normalize_trading_signals(actionable_events)
         
-    backtester = Backtester(initial_capital=100000)
+    backtester = Backtester(initial_capital=10000)
 
     signals = []
     for event in normalized_events:
@@ -118,6 +116,6 @@ def run_system_backtest(
 if __name__ == "__main__":
     run_system_backtest(
         "AAPL",
-        start_date="2017-01-27",
-        end_date="2020-01-27",
+        start_date="2020-01-01",
+        end_date="2020-01-31",
     )

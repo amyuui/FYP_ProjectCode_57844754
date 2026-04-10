@@ -3,8 +3,6 @@ import sys
 from src.utils.config import DEEPSEEK_API_KEY
 from src.app.momentum_app import MomentumEventAnalyzerApp
 
-import os
-
 if __name__ == "__main__":
     # Example Usage
     api_key = DEEPSEEK_API_KEY
